@@ -1,4 +1,3 @@
-// Fetch and display IP + URL + QR
 fetch("/api/ip")
     .then((response) => response.text())
     .then((ip) => {
@@ -11,32 +10,37 @@ fetch("/api/ip")
         document.getElementById("full-url").value = "Unavailable";
     });
 
-// Copy to clipboard functionality
 function copyUrl() {
     const input = document.getElementById("full-url");
-    input.select();
-    input.setSelectionRange(0, 99999); // For mobile devices
+    const text = input.value;
 
-    try {
-        // Use Clipboard API if supported
-        if (navigator.clipboard && window.isSecureContext) {
-            navigator.clipboard
-                .writeText(input.value)
-                .then(() => alert("Copied to clipboard: " + input.value))
-                .catch((err) => fallbackCopy());
-        } else {
-            fallbackCopy(); // Fallback for insecure context or unsupported API
-        }
-    } catch (err) {
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard
+            .writeText(text)
+            .then(() => showToast("Copied to clipboard!"))
+            .catch(() => fallbackCopy());
+    } else {
         fallbackCopy();
     }
 
     function fallbackCopy() {
+        input.select();
+        input.setSelectionRange(0, 99999);
         const successful = document.execCommand("copy");
         if (successful) {
-            alert("Copied to clipboard: " + input.value);
+            showToast("Copied to clipboard!");
         } else {
-            alert("Failed to copy. Please copy manually.");
+            showToast("Failed to copy. Please copy manually.");
         }
+    }
+
+    function showToast(message) {
+        const toast = document.getElementById("toast");
+        toast.textContent = message;
+        toast.classList.add("show");
+
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 2000);
     }
 }

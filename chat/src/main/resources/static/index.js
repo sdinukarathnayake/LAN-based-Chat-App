@@ -44,3 +44,13 @@ function copyUrl() {
         }, 2000);
     }
 }
+
+function goToChat() {
+    const nameInput = document.getElementById("calling-name");
+    const name = nameInput.value.trim();
+    if (name) {
+        sessionStorage.setItem("callingName", name);
+        window.location.href = "chat.html";
+    }
+    return false;
+}

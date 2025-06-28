@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chat Room</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="styles.css" />
+        <script src="https://cdn.jsdelivr.net/npm/sockjs-client/dist/sockjs.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/stompjs/lib/stomp.min.js"></script>
+    </head>
+    <body>
+        <div id="chat-container">
+            <header>
+                <h3 id="user-display"></h3>
+            </header>
+            <ul id="chat-messages"></ul>
+            <footer>
+                <input
+                    type="text"
+                    id="chat-input"
+                    placeholder="Type a message"
+                />
+                <button onclick="sendMessage()">Send</button>
+            </footer>
+        </div>
+        
+        <script src="chat.js"></script>
+    </body>
+</html>

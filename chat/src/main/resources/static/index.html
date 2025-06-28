@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>LAN Chat</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
-      background-color: #f3f3f3;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-  <h1>Welcome to LAN Chat App!</h1>
-  <p>This is a basic frontend served by Spring Boot.</p>
-</body>
+    <head>
+        <title>LAN Chat App</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="styles.css" />
+        <script src="https://cdn.jsdelivr.net/npm/sockjs-client/dist/sockjs.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/stompjs/lib/stomp.min.js"></script>
+    </head>
+    <body>
+        <h2>LAN Chat App</h2>
+
+        <div id="ip-display">
+            Server IP Address: <span id="ip-address">Loading...</span>
+        </div>
+
+        <div id="url-container">
+            <input type="text" id="full-url" readonly value="http://" />
+            <button onclick="copyUrl()">Copy</button>
+        </div>
+
+        <script src="script.js"></script>
+        <div id="toast" class="toast">Copied to clipboard!</div>
+
+    </body>
 </html>

@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 2rem;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+#ip-display {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+#messages {
+    list-style-type: none;
+    padding: 0;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 600px;
+    text-align: left;
+}
+
+#messages li {
+    background-color: #e3f2fd;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+input,
+button {
+    padding: 10px;
+    margin: 0.5rem;
+}
+
+#url-container {
+    margin-bottom: 1rem;
+}
+
+#url-container input {
+    width: 300px;
+    padding: 8px;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+#url-container button {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+.toast {
+    visibility: hidden;
+    min-width: 180px;
+    margin-left: -90px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 12px 20px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 0.95rem;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+}

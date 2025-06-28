@@ -32,3 +32,21 @@ button {
     padding: 10px;
     margin: 0.5rem;
 }
+
+#url-container {
+    margin-bottom: 1rem;
+}
+
+#url-container input {
+    width: 300px;
+    padding: 8px;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+#url-container button {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    margin-left: 6px;
+    cursor: pointer;
+}

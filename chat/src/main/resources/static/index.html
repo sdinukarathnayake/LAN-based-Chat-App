@@ -10,8 +10,15 @@
     <body>
         <h2>LAN Chat App</h2>
 
+        <!-- IP Display -->
         <div id="ip-display">
             Server IP Address: <span id="ip-address">Loading...</span>
+        </div>
+
+        <!-- Share URL -->
+        <div id="url-container">
+            <input type="text" id="full-url" readonly value="http://" />
+            <button onclick="copyUrl()">Copy</button>
         </div>
 
         <script src="script.js"></script>

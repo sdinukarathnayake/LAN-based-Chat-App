@@ -19,8 +19,19 @@
             <button onclick="copyUrl()">Copy</button>
         </div>
 
-        <script src="script.js"></script>
-        <div id="toast" class="toast">Copied to clipboard!</div>
+        <div id="name-entry">
+            <form id="name-form" onsubmit="return goToChat();">
+                <input
+                    type="text"
+                    id="calling-name"
+                    placeholder="Enter your name"
+                    required
+                />
+                <button type="submit">Start Chat</button>
+            </form>
+        </div>
 
+        <script src="index.js"></script>
+        <div id="toast" class="toast">Copied to clipboard!</div>
     </body>
 </html>
